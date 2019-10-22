@@ -7,7 +7,7 @@ describe('Date add testing', () => {
     console.log(date.toUTCString());
     const diffSeconds = '10s';
     const seconds = dateAdder(date, diffSeconds);
-    expect(seconds).toEqual('Sun, 20 Jan 2019 18:33:40 GMT');
+    expect(seconds.toUTCString()).toEqual('Sun, 20 Jan 2019 18:33:40 GMT');
   });
 
   it.skip('can successfully add minutes', () => {
