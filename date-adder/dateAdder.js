@@ -12,7 +12,7 @@ function dateAdder(date, diff) {
   if(diffOperator === 'M') result = new Date(date.setMonth(date.getMonth() + diffNumber));
   if(diffOperator === 'y') result = new Date(date.setFullYear(date.getFullYear() + diffNumber));
 
-  return result;
+  return result.toUTCString();
 }
 
 module.exports = dateAdder;
