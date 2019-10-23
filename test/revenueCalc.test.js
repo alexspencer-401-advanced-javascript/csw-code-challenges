@@ -1,4 +1,4 @@
-const dailyRev = require('../revenue-calc/revenueCalc');
+const dailyRev = require('../challenges/revenue-calc/revenueCalc');
 
 describe('Revenue testing', () => {
 

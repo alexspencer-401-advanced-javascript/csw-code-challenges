@@ -1,4 +1,4 @@
-const dateAdder = require('../date-adder/dateAdder');
+const dateAdder = require('../challenges/date-adder/dateAdder');
 
 describe('Date add testing', () => {
 
