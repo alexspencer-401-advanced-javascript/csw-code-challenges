@@ -52,4 +52,25 @@ describe('Set testing', () => {
     expect(result.array).toEqual([1, 6]);
   });
 
+  it('tests static intersection', () => {
+    const set = new Set([1, 3, 5]);
+    const set2 = new Set([3, 5, 6]);
+    const result = Set.difference(set, set2);
+    expect(result.array).toEqual([1, 6]);
+  });
+
+  it('tests static union', () => {
+    const set = new Set([1, 3, 5]);
+    const set2 = new Set([3, 5, 6]);
+    const result = Set.union(set, set2);
+    expect(result.array).toEqual([1, 3, 5, 6]);
+  });
+
+  it('tests a static difference', () => {
+    const set = new Set([1, 3, 5]);
+    const set2 = new Set([3, 5, 6]);
+    const result = Set.difference(set, set2);
+    expect(result.array).toEqual([1, 6]);
+  });
+
 });
