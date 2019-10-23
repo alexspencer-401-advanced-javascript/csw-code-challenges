@@ -21,34 +21,33 @@ class Set {
   intersection(set) {
     const newSet = new Set([]);
     for(let i = 0; i < this.array.length; i++) {
-      if(set.array.includes(this.array[i])) {
-        newSet.add(this.array[i]);
-      }
+      if(set.array.includes(this.array[i])) newSet.add(this.array[i]);
     }
     return newSet;
   }
 
   union(set) {
-    const newSet = new Set();
+    const newSet = new Set([]);
     for(let i = 0; i < this.array.length; i++) {
       newSet.add(this.array[i]);
     }
-    for(let j = 0; j < set.length; j++) {
-      newSet.add(set[j]);
+    for(let j = 0; j < set.array.length; j++) {
+      newSet.add(set.array[j]);
     }
     return newSet;
   }
 
   difference(set) {
-    const newSet = new Set();
+    const newSet = new Set([]);
     for(let i = 0; i < this.array.length; i++) {
-      if(!set.includes(this.array[i]))
+      if(!set.array.includes(this.array[i]))
         newSet.add(this.array[i]);
     }
-    for(let j = 0; j < set.length; j++) {
-      if(!this.array.includes(set[j]))
-        newSet.add(set[j]);
+    for(let j = 0; j < set.array.length; j++) {
+      if(!this.array.includes(set.array[j]))
+        newSet.add(set.array[j]);
     }
+    return newSet;
   }
 }
 

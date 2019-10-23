@@ -38,4 +38,18 @@ describe('Set testing', () => {
     expect(result.array).toEqual([3, 5]);
   });
 
+  it('returns the union of two sets', () => {
+    const set = new Set([1, 3, 5]);
+    const set2 = new Set([3, 5, 6]);
+    const result = set.union(set2);
+    expect(result.array).toEqual([1, 3, 5, 6]);
+  });
+
+  it('returns the difference of two sets', () => {
+    const set = new Set([1, 3, 5]);
+    const set2 = new Set([3, 5, 6]);
+    const result = set.difference(set2);
+    expect(result.array).toEqual([1, 6]);
+  });
+
 });
