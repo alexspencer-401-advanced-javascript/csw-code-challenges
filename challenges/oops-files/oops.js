@@ -1,23 +1,22 @@
 const folder = './challenges/oops-files/data/';
-const fs = require('fs');
+const fs = require('fs').promises;
 
-let fileNameArray = [];
-// let fileContentArray = [];
-const path = folder;
-
-fs.readdir(folder, function(err, fileNames) {
-  fileNames.forEach(file => {
-    return fileNameArray.push(file);
-  });
-  fileNameArray.forEach(name => {
-    fs.readFile(`${path}${name}`, { encoding: 'utf-8' }, function(err, fileContents) {
-      let content = fileContents;
-      console.log(content);
-      // fileContentArray.push(fileContents.toString());
+function oopsFile(folder) {
+  return fs.readdir(folder)
+    .then(fileNames => {
+      fileNames.forEach(file => {
+        return fs.readFile(`${folder}${file}`)
+          .then(contents => {
+            let content = contents.toString();
+            return fs.stat(`${folder}${file}`)
+              .then(stat => {
+                return fs.rename(`${folder}${file}`, `${folder}${content}-${file.slice(0, file.length - 4)}-${stat.mtime.toISOString()}`);
+              });
+          });
+      });
     });
-  });
-});
+}
+
+oopsFile(folder);
 
 
-// fs.readdir(path, function (err, items) {
-//   console.log(items);
