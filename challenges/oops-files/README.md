@@ -7,7 +7,7 @@ Broadly, we need to iterate through the friend's files, and reformat the naming 
 1. More specifically, we need to go through our friend's files to get the contents and timestamp, associating that information with the file number.
 2. Then we need to, based on the contents of each file by number, reformat the file name to be ```${FILE_CONTENT}-${OLD_FILE_NUMBER}-${LAST_MODIFIED_DATETIME}```.
 
-## Smaller Chunks:
+## Smaller Chunks: (I forgot to commit as I went really...)
 
 1. Go through and get an array of file paths
 2. Go through contents of each file (fs readFile)
